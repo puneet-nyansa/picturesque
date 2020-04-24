@@ -68,7 +68,7 @@ app.post("/webhook", async (req, res) => {
   let data;
   let eventType;
   // Check if webhook signing is configured.
-  if (process.env.STRIPE_WEBHOOK_SECRET) {
+  /*if (process.env.STRIPE_WEBHOOK_SECRET) {
     // Retrieve the event by verifying the signature using the raw body and secret.
     let event;
     let signature = req.headers["stripe-signature"];
@@ -86,12 +86,11 @@ app.post("/webhook", async (req, res) => {
     // Extract the object from the event.
     data = event.data;
     eventType = event.type;
-  } else {
+  } */
     // Webhook signing is recommended, but if the secret is not configured in `config.js`,
     // retrieve the event data directly from the request body.
     data = req.body.data;
     eventType = req.body.type;
-  }
 
   if (eventType === "payment_intent.succeeded") {
     // Fulfill any orders, e-mail receipts, etc

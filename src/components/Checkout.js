@@ -148,6 +148,7 @@ const Checkout = props => {
     <div className="checkout-form">
       <div className="sr-payment-form">
         <div className="sr-form-row" />
+        <h1>Picturesque</h1>
         {succeeded ? renderSuccess() : renderForm()}
       </div>
     </div>

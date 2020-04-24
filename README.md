@@ -1,68 +1,68 @@
+# Accepting payments on an e-commerce application using Stripe APIs
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##Product Overview
+Picturesque is an e-commerce application created using React. The application pulls images in real-time from my online album on Flickr and creates a gallery of pictures that customers can select from. To accept payments from customers from around the world, the application uses Stripe as the payment platform provider.
 
-In the project directory, you can run:
+Application Architecture
+-	Application’s front-end client was built using – React js, React Router, React Hooks, Context API, Flickr API
+-	Application’s backend was built using – Node & Stripe APIs to accept payments
 
-### `npm start`
+### Getting Started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to run locally
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To run this application locally you need to start both a local dev server for the `front-end` and another server for the `back-end`.
 
-### `npm test`
+You will need a Stripe account with its own set of [API keys](https://stripe.com/docs/development#api-keys).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow the steps below to run locally.
 
-### `npm run build`
+**1. Clone and configure the sample**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone/download the repository on your local machine.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You will need a Stripe account in order to run the demo. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to /src/server folder, open file named .env and update the following with your Publishable and Secret key
 
-### `npm run eject`
+```
+STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
+STRIPE_SECRET_KEY=<replace-with-your-secret-key>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running the API server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Go to `src/server`
+2. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Run the server
 
-## Learn More
+```
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Use ngrok to receive Webhooks on localhost from Stripe Platform. Setup the webhook endpoint on your Stripe developer dashboard to setup event notifications for - Payment Intent & Charge Events. This will log fulfillment information into the project.log file. See instructions to set up ngrok here - https://www.twilio.com/blog/2013/10/test-your-webhooks-locally-with-ngrok.html
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Running the React client
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. Go to `/src`
+2. Run `npm install`
+3. `npm start` and your default browser should now open with the front-end being served from `http://localhost:3000/#/memories/home`.
 
-### Analyzing the Bundle Size
+### Using the sample app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+When running both servers, you are now ready to use the app running in [http://localhost:3000/#/memories/home](http://localhost:3000/#/memories/home).
 
-### Making a Progressive Web App
+1. Select the Product name you want to buy from the drop-down list
+2. Hit "Buy"
+3. On the checkout page enter payment details and email address for Product fulfillment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Author(s)
+Puneet Shetty
