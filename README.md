@@ -50,7 +50,7 @@ npm start
 
 ### Running the React client
 
-1. Go to `/src`
+1. Go to application root directory
 2. Run `npm install`
 3. Run `npm start` and your default browser should now open with the front-end being served from `http://localhost:3000/#/memories/home`.
 
