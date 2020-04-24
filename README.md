@@ -23,11 +23,7 @@ Clone/download the repository on your local machine.
 
 You will need a Stripe account in order to run the demo. Once you set up your account, go to the Stripe [developer dashboard](https://stripe.com/docs/development#api-keys) to find your API keys.
 
-Copy the .env.example file into a file named .env in `src/server`
-
-```
-cp .env.example src/server/.env
-```
+Create a new file named .env in `src/server` and add the following lines to it, replace with your API keys and save the file
 
 ```
 STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
