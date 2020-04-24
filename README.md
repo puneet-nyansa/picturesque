@@ -26,7 +26,7 @@ You will need a Stripe account in order to run the demo. Once you set up your ac
 Copy the .env.example file into a file named .env in `src/server`
 
 ```
-cp .env.example server/node/.env
+cp .env.example src/server/.env
 ```
 
 ```
