@@ -62,5 +62,8 @@ When running both servers, you are now ready to use the app running in `http://l
 2. Hit "Buy"
 3. On the checkout page enter payment details and email address for Product fulfillment
 
+## Application Landing page
+![](/picturesque-screenshot.png)
+
 ## Author(s)
 Puneet Shetty
