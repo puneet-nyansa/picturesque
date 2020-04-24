@@ -118,7 +118,7 @@ const Checkout = props => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Email for fulfillment"
                 autoComplete="email"
                 className="sr-input"
               />
